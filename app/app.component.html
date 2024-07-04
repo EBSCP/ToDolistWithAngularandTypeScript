@@ -1,0 +1,21 @@
+<div class="ToDo-Container">
+  <input type="text" [(ngModel)]="name" placeholder="Enter what you want to do">
+  <button type="submit" (click)="editId !== null ? updateTodo() : addTodo()">
+    {{ editId !== null ? 'Update' : 'Submit' }}
+  </button>
+  <div class="ToDo-text" *ngFor="let todo of todos">
+    <div class="ToDo-work">
+      <p>{{ todo.work }}</p>
+    </div>
+    <div class="ToDo-date">
+      <p>{{ todo.date }}</p>
+    </div>
+    <div class="ToDo-check">
+      <input type="checkbox" class="ToDo-input" name="">
+    </div>
+    <div class="ToDo-edit">
+      <button (click)="clear()">clear</button>
+      <button (click)="edit(todo.id)">Edit</button>
+    </div>
+  </div>
+</div>
